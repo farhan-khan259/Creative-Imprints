@@ -9,7 +9,7 @@ export const defaultContent = {
     navbar: {
       brandName: 'Creative Imprints',
       brandTag: 'Futuristic digital experiences',
-      links: ['Home', 'Services', 'Portfolio', 'Contact', 'Admin'],
+      links: ['Home', 'Services', 'Portfolio', 'Contact'],
       langButton: 'AR',
     },
     hero: {
