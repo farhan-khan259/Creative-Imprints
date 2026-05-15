@@ -1,12 +1,53 @@
 // src/components/Navbar.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../assets/pictures/logo.jpeg';
 
 const Navbar = ({ lang, copy, toggleLang }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (!menuOpen || window.innerWidth > 1024) {
+      document.body.style.overflow = '';
+      return;
+    }
+
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1024) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, []);
+
   return (
-    <header className="navbar">
+    <header className={`navbar ${menuOpen ? 'navbar--menu-open' : ''}`}>
       <div className="navbar__inner glass-card">
         <a href="#home" className="navbar__brand" onClick={() => setMenuOpen(false)}>
           <img src={logo} alt="Creative Imprints" className="navbar__logo" />
@@ -16,7 +57,7 @@ const Navbar = ({ lang, copy, toggleLang }) => {
           </div>
         </a>
 
-        <nav className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
+        <nav id="main-nav" className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
           {copy.links.map((link, idx) => (
             <a key={idx} href={`#${link.toLowerCase().replace(/\s+/g, '')}`} onClick={() => setMenuOpen(false)}>
               {link}
@@ -43,8 +84,10 @@ const Navbar = ({ lang, copy, toggleLang }) => {
 
         <button
           className={`navbar__toggle ${menuOpen ? 'open' : ''}`}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={() => setMenuOpen((prev) => !prev)}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+          aria-expanded={menuOpen}
+          aria-controls="main-nav"
         >
           <span />
           <span />

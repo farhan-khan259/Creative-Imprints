@@ -56,6 +56,7 @@ img {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  position: relative;
   padding: 16px 24px;
   background: rgba(10, 14, 23, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -207,34 +208,61 @@ img {
   .navbar__inner {
     padding: 14px 20px;
     gap: 16px;
+    min-height: 74px;
   }
 
   .navbar__nav {
-    position: fixed;
-    inset: 0;
-    z-index: 55;
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    z-index: 75;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 130px 28px 40px;
-    background: rgba(8, 12, 26, 0.95);
-    backdrop-filter: blur(24px);
-    transform: translateX(100%);
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 4px;
+    padding: 14px;
+    border-radius: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(8, 12, 26, 0.94);
+    backdrop-filter: blur(22px);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+    max-height: min(70vh, 520px);
+    overflow-y: auto;
+    transform: translateY(-12px) scale(0.98);
+    transform-origin: top center;
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    transition: transform 0.28s ease, opacity 0.28s ease, visibility 0.28s ease;
   }
 
   .navbar__nav--open {
-    transform: translateX(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
   }
 
   .navbar__nav a {
-    font-size: 1.15rem;
+    font-size: 1rem;
     width: 100%;
-    padding: 10px 0;
+    padding: 12px 14px;
+    border-radius: 12px;
+    color: rgba(245, 248, 255, 0.9);
+    background: rgba(255, 255, 255, 0);
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .navbar__nav a::after {
+    display: none;
+  }
+
+  .navbar__nav a:hover,
+  .navbar__nav a:focus {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
   }
 
   .navbar__actions {
@@ -244,9 +272,11 @@ img {
   .navbar__mobile-actions {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     width: 100%;
-    margin-top: 28px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .navbar__mobile-actions .button {
@@ -255,6 +285,25 @@ img {
 
   .navbar__toggle {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .navbar__brand {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .navbar__brand-text {
+    min-width: 0;
+  }
+
+  .navbar__brand-text h3,
+  .navbar__brand-text p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
@@ -270,7 +319,7 @@ img {
   }
 
   .navbar__brand-text p {
-    font-size: 0.72rem;
+    display: none;
   }
 }
 
