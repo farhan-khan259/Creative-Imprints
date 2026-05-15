@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from '../assets/pictures/logo.jpeg';
 
 const AdminNavbar = ({ onHamburgerClick, sidebarOpen, lang, toggleLang, brandName, brandTag }) => {
   return (
     <nav className="admin-navbar">
       <div className="admin-navbar-brand">
-        <img src={logo} alt="Admin Logo" />
         <div className="admin-navbar-text">
           <h3>{brandName}</h3>
           <p>{brandTag}</p>
