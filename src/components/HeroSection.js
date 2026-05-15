@@ -47,7 +47,7 @@ const HeroSection = ({ copy }) => {
   }, []);
 
   const scrollToContact = () => {
-    const ctaSection = document.getElementById('final-cta');
+    const ctaSection = document.getElementById('contact');
     if (ctaSection) ctaSection.scrollIntoView({ behavior: 'smooth' });
   };
 

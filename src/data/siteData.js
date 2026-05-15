@@ -11,7 +11,15 @@ export const defaultContent = {
     navbar: {
       brandName: 'Creative Imprints',
       brandTag: 'Software & AI Studio',
-      links: ['Home', 'About', 'Services', 'Portfolio', 'Pricing', 'Contact'],
+      links: [
+        { label: 'Home', target: 'home' },
+        { label: 'About', target: 'about' },
+        { label: 'Expertise', target: 'expertise' },
+        { label: 'Why Us', target: 'why-us' },
+        { label: 'Testimonials', target: 'testimonials' },
+        { label: 'Portfolio', target: 'portfolio' },
+        { label: 'Contact', target: 'contact' },
+      ],
       langButton: 'AR',
     },
     hero: {
@@ -139,7 +147,15 @@ export const defaultContent = {
     navbar: {
       brandName: 'كرياتيف إمبرينتس',
       brandTag: 'استوديو رقمي سينمائي',
-      links: ['الرئيسية', 'حول', 'الخدمات', 'الأعمال', 'الأسعار', 'اتصل'],
+      links: [
+        { label: 'الرئيسية', target: 'home' },
+        { label: 'حولنا', target: 'about' },
+        { label: 'الخبرات', target: 'expertise' },
+        { label: 'لماذا نحن', target: 'why-us' },
+        { label: 'آراء العملاء', target: 'testimonials' },
+        { label: 'الأعمال', target: 'portfolio' },
+        { label: 'تواصل', target: 'contact' },
+      ],
       langButton: 'EN',
     },
     hero: {

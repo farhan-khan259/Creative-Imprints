@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const Testimonials = ({ copy }) => (
-  <section className="section testimonials-section">
+  <section id="testimonials" className="section testimonials-section">
     <div className="section__header">
       <span className="section__label">{copy.label}</span>
       <h2>{copy.title}</h2>

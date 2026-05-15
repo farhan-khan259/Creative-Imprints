@@ -2,6 +2,43 @@
 import React, { useEffect, useState } from 'react';
 import logo from '../assets/pictures/logo.jpeg';
 
+const fallbackTargetMap = {
+  home: 'home',
+  about: 'about',
+  services: 'expertise',
+  expertise: 'expertise',
+  'why us': 'why-us',
+  testimonials: 'testimonials',
+  portfolio: 'portfolio',
+  pricing: 'portfolio',
+  contact: 'contact',
+};
+
+const normalizeNavText = (value = '') =>
+  value
+    .toString()
+    .trim()
+    .toLowerCase()
+    .replace(/[\u200E\u200F]/g, '')
+    .replace(/\s+/g, ' ');
+
+const resolveNavLink = (link) => {
+  if (typeof link === 'object' && link !== null) {
+    const label = link.label || link.name || '';
+    const target = (link.target || link.href || normalizeNavText(label).replace(/\s+/g, '-'))
+      .toString()
+      .replace(/^#/, '');
+
+    return { label, target };
+  }
+
+  const label = link?.toString?.() || '';
+  const normalized = normalizeNavText(label);
+  const target = fallbackTargetMap[normalized] || normalized.replace(/\s+/g, '-');
+
+  return { label, target };
+};
+
 const Navbar = ({ lang, copy, toggleLang }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -58,16 +95,20 @@ const Navbar = ({ lang, copy, toggleLang }) => {
         </a>
 
         <nav id="main-nav" className={`navbar__nav ${menuOpen ? 'navbar__nav--open' : ''}`}>
-          {copy.links.map((link, idx) => (
-            <a key={idx} href={`#${link.toLowerCase().replace(/\s+/g, '')}`} onClick={() => setMenuOpen(false)}>
-              {link}
-            </a>
-          ))}
+          {copy.links.map((link, idx) => {
+            const { label, target } = resolveNavLink(link);
+
+            return (
+              <a key={idx} href={`#${target}`} onClick={() => setMenuOpen(false)}>
+                {label}
+              </a>
+            );
+          })}
           <div className="navbar__mobile-actions">
             <button onClick={toggleLang} className="button button--outline navbar__lang">
               {copy.langButton}
             </button>
-            <a href="#final-cta" className="button button--primary navbar__cta" onClick={() => setMenuOpen(false)}>
+            <a href="#contact" className="button button--primary navbar__cta" onClick={() => setMenuOpen(false)}>
               Start a project
             </a>
           </div>
@@ -77,7 +118,7 @@ const Navbar = ({ lang, copy, toggleLang }) => {
           <button onClick={toggleLang} className="button button--outline navbar__lang">
             {copy.langButton}
           </button>
-          <a href="#final-cta" className="button button--primary navbar__cta">
+          <a href="#contact" className="button button--primary navbar__cta">
             Start a project
           </a>
         </div>
