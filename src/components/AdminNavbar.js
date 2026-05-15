@@ -1,3 +1,4 @@
+// src/components/AdminNavbar.js
 import React from 'react';
 
 const AdminNavbar = ({ onHamburgerClick, sidebarOpen, lang, toggleLang, brandName, brandTag }) => {

@@ -1347,10 +1347,107 @@ a {
   left: auto;
   right: 0;
 }
+/* ================================================
+   ADMIN NAVBAR
+================================================ */
+.admin-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  background: rgba(10, 14, 23, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 80;
+}
 
-/* ----------------------------------------------
-   ADMIN PANEL STYLES
-------------------------------------------------- */
+.admin-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.admin-navbar-text h3 {
+  font-size: 1.1rem;
+  margin: 0 0 2px 0;
+  color: #fff;
+}
+
+.admin-navbar-text p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.admin-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Language toggle button */
+.lang-toggle {
+  padding: 8px 18px;
+  border-radius: 30px;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lang-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--primary-blue);
+}
+
+/* Sidebar hamburger (burger icon) */
+.admin-hamburger {
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: none; /* hidden on desktop by default */
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.admin-hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.2s;
+}
+
+.admin-hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.admin-hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.admin-hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ================================================
+   ADMIN PANEL LAYOUT
+================================================ */
 .admin-wrapper {
   display: flex;
   flex-direction: column;
@@ -1363,37 +1460,57 @@ a {
   flex: 1;
 }
 
+/* ================================================
+   ADMIN SIDEBAR
+================================================ */
 .admin-sidebar {
   width: 280px;
   background: #0A0E17;
   padding: 30px 20px;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+}
+
+.admin-sidebar h3 {
+  color: #fff;
+  margin-bottom: 24px;
+  font-size: 1.15rem;
 }
 
 .admin-sidebar button {
   display: block;
   width: 100%;
-  margin: 8px 0;
-  padding: 12px;
+  margin: 6px 0;
+  padding: 12px 16px;
   background: transparent;
   border: none;
-  color: white;
+  color: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
   cursor: pointer;
   text-align: left;
   font-weight: 500;
-  transition: 0.2s;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
 }
 
-.admin-sidebar button:hover,
+.admin-sidebar button:hover {
+  background: rgba(36, 99, 235, 0.2);
+  color: #fff;
+}
+
 .admin-sidebar button.active {
   background: var(--primary-blue);
+  color: #fff;
 }
 
+/* ================================================
+   ADMIN MAIN CONTENT
+================================================ */
 .admin-main {
   flex: 1;
   padding: 40px;
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .admin-toolbar {
@@ -1405,6 +1522,20 @@ a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.admin-toolbar h2 {
+  color: #fff;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* ================================================
+   FORM FIELDS & CARDS
+================================================ */
 .admin-field {
   margin-bottom: 24px;
 }
@@ -1413,6 +1544,7 @@ a {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 
@@ -1425,6 +1557,15 @@ a {
   border-radius: 16px;
   color: white;
   font-family: inherit;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.admin-field input:focus,
+.admin-field textarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .admin-message {
@@ -1435,36 +1576,96 @@ a {
   border-radius: 12px;
   color: white;
   font-size: 0.9rem;
+  animation: fadeIn 0.3s ease;
 }
 
 .admin-card-item {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px;
+  padding: 24px;
   border-radius: 16px;
   margin-bottom: 20px;
 }
 
-@media (max-width: 768px) {
+.admin-card-item h4 {
+  margin-bottom: 16px;
+  color: var(--cyan-accent);
+}
+
+/* JSON editor specific */
+.admin-json-editor {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  background: rgba(0, 0, 0, 0.3) !important;
+}
+
+.admin-hint {
+  margin-top: 12px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ================================================
+   RESPONSIVE – ADMIN PANEL
+================================================ */
+/* Show hamburger only on smaller screens */
+@media (max-width: 1024px) {
+  .admin-hamburger {
+    display: flex;
+  }
+}
+
+/* Mobile / tablet sidebar behaviour */
+@media (max-width: 1024px) {
   .admin-layout {
     flex-direction: column;
   }
+
   .admin-sidebar {
-    width: 100%;
-    display: flex;
-    overflow-x: auto;
-    padding: 16px;
-    gap: 12px;
-    border-right: none;
-    border-bottom: 1px solid var(--border-glass);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100vh;
+    z-index: 90;
+    transform: translateX(-100%);
+    padding-top: 80px;  /* leave room for navbar */
+    box-shadow: 5px 0 20px rgba(0, 0, 0, 0.5);
   }
-  .admin-sidebar button {
-    width: auto;
-    white-space: nowrap;
+
+  .admin-sidebar.show {
+    transform: translateX(0);
   }
+
   .admin-main {
-    padding: 20px;
+    padding: 24px;
   }
+}
+
+@media (max-width: 768px) {
+  .admin-navbar {
+    padding: 12px 16px;
+  }
+
+  .admin-navbar-text h3 {
+    font-size: 1rem;
+  }
+
+  .admin-toolbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .admin-sidebar {
+    width: 260px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 /* ================================================

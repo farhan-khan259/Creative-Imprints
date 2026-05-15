@@ -4,7 +4,8 @@ export const defaultContent = {
   en: {
     seo: {
       title: 'Creative Imprints — Cinematic Digital Products',
-      description: 'We craft cinematic digital products. A studio that works closely with mobile, web, and AI experiences for ambitious brands across the globe.',
+      description:
+        'We craft cinematic digital products. A studio that works closely with mobile, web, and AI experiences for ambitious brands across the globe.',
       keywords: 'digital studio, web development, mobile apps, AI solutions, branding',
       url: 'https://www.creativeimprints.com',
     },
@@ -24,7 +25,8 @@ export const defaultContent = {
     },
     hero: {
       title: 'We turn your ideas into a dazzling digital reality.',
-      subtitle: 'At Creative Imprint,we combine teachnology and creativity to leave an unforgettable mark on the world of software .',
+      subtitle:
+        'At Creative Imprints, we combine technology and creativity to leave an unforgettable mark on the world of software.',
       button: 'Start your project →',
     },
     stats: [
@@ -35,41 +37,117 @@ export const defaultContent = {
     ],
     studio: {
       title: 'A studio engineered for the future.',
-      subtitle: 'We are a multidisciplinary team of engineers, designers, and AI specialists. We partner with founders and enterprises to build products that feel inevitable — fast, beautiful, and built to scale.',
-      vision: 'To be the creative engine behind the next generation of digital products in the real world and beyond.',
-      mission: 'Empower every ambitious brand with software that performs at a world‑class standard.',
+      subtitle:
+        'We are a multidisciplinary team of engineers, designers, and AI specialists. We partner with founders and enterprises to build products that feel inevitable — fast, beautiful, and built to scale.',
+      vision:
+        'To be the creative engine behind the next generation of digital products in the real world and beyond.',
+      mission:
+        'Empower every ambitious brand with software that performs at a world‑class standard.',
     },
     expertise: {
       title: 'End-to-end product expertise.',
-      subtitle: 'From a sketch on a napkin to a million users — we cover every layer of the modern product stack.',
+      subtitle:
+        'From a sketch on a napkin to a million users — we cover every layer of the modern product stack.',
       items: [
-        { title: 'Mobile Apps', description: 'Native and cross-platform apps with cinematic motion and rock-solid performance.', icon: '📱' },
-        { title: 'Web Platforms', description: 'Lightning-fast, SEO-perfect web experiences built on a modern stack.', icon: '🌐' },
-        { title: 'E-commerce', description: 'High-converting storefronts and marketplaces tailored to your brand.', icon: '🛒' },
-        { title: 'Learning Platforms', description: 'Scalable LMS and educational products with delightful learner UX.', icon: '🎓' },
-        { title: 'UI / UX Design', description: 'Research-driven design systems and interfaces that feel inevitable.', icon: '🎨' },
-        { title: 'AI Solutions', description: 'Custom LLM agents, RAG pipelines, and AI features embedded into your product.', icon: '🤖' },
-        { title: 'Branding', description: 'Identity systems that translate strategy into visual gravity.', icon: '✨' },
-        { title: 'Cloud Systems', description: 'Resilient, secure infrastructure designed to scale to millions.', icon: '☁️' },
-        { title: 'Digital Transformation', description: 'Modernize legacy operations into measurable digital leverage.', icon: '🚀' },
+        {
+          title: 'Mobile Apps',
+          description:
+            'Native and cross-platform apps with cinematic motion and rock-solid performance.',
+          icon: '📱',
+        },
+        {
+          title: 'Web Platforms',
+          description:
+            'Lightning-fast, SEO-perfect web experiences built on a modern stack.',
+          icon: '🌐',
+        },
+        {
+          title: 'E-commerce',
+          description:
+            'High-converting storefronts and marketplaces tailored to your brand.',
+          icon: '🛒',
+        },
+        {
+          title: 'Learning Platforms',
+          description:
+            'Scalable LMS and educational products with delightful learner UX.',
+          icon: '🎓',
+        },
+        {
+          title: 'UI / UX Design',
+          description:
+            'Research-driven design systems and interfaces that feel inevitable.',
+          icon: '🎨',
+        },
+        {
+          title: 'AI Solutions',
+          description:
+            'Custom LLM agents, RAG pipelines, and AI features embedded into your product.',
+          icon: '🤖',
+        },
+        {
+          title: 'Branding',
+          description:
+            'Identity systems that translate strategy into visual gravity.',
+          icon: '✨',
+        },
+        {
+          title: 'Cloud Systems',
+          description:
+            'Resilient, secure infrastructure designed to scale to millions.',
+          icon: '☁️',
+        },
+        {
+          title: 'Digital Transformation',
+          description:
+            'Modernize legacy operations into measurable digital leverage.',
+          icon: '🚀',
+        },
       ],
     },
     builtDifferent: {
       title: 'Built different. Built to last.',
       items: [
-        { title: 'Modern stack', description: 'Always on the latest frameworks, runtimes, and AI models.', icon: '🧠' },
-        { title: 'Speed obsessed', description: 'We ship in weeks, not quarters — without cutting quality.', icon: '⚡' },
-        { title: 'Security first', description: 'Enterprise-grade security and compliance baked in from day one.', icon: '🛡️' },
-        { title: 'Scales infinitely', description: 'Architectures battle-tested from MVP to millions of users.', icon: '📈' },
-        { title: 'Senior team', description: 'No juniors learning on your dime — only proven specialists.', icon: '👥' },
-        { title: 'Crafted UX', description: 'Pixel-level care. Motion that delights. Details that convert.', icon: '🎯' },
+        {
+          title: 'Modern stack',
+          description: 'Always on the latest frameworks, runtimes, and AI models.',
+          icon: '🧠',
+        },
+        {
+          title: 'Speed obsessed',
+          description: 'We ship in weeks, not quarters — without cutting quality.',
+          icon: '⚡',
+        },
+        {
+          title: 'Security first',
+          description:
+            'Enterprise-grade security and compliance baked in from day one.',
+          icon: '🛡️',
+        },
+        {
+          title: 'Scales infinitely',
+          description:
+            'Architectures battle-tested from MVP to millions of users.',
+          icon: '📈',
+        },
+        {
+          title: 'Senior team',
+          description:
+            'No juniors learning on your dime — only proven specialists.',
+          icon: '👥',
+        },
+        {
+          title: 'Crafted UX',
+          description:
+            'Pixel-level care. Motion that delights. Details that convert.',
+          icon: '🎯',
+        },
       ],
     },
-   
     finalCta: {
       title: 'Have a project in mind?',
       subtitle: 'Tell us about your idea. We typically respond within 24 hours.',
-      label: 'LET\'S TALK',
+      label: "LET'S TALK",
       email: 'hello@creativeimprints.com',
       phone: '+123 00 000 0000',
       location: 'Business park - Vbc -111',
@@ -79,26 +157,29 @@ export const defaultContent = {
         email: 'EMAIL ADDRESS',
         project: 'TELL US ABOUT YOUR PROJECT',
         submit: 'Send message',
-      }
+      },
     },
     testimonials: {
       label: 'LOVED BY FOUNDERS',
       title: 'Trusted by the bold.',
       items: [
         {
-          quote: '"Creative Imprints delivered our platform in 6 weeks. The quality rivals anything I\'ve seen out of San Francisco."',
+          quote:
+            '"Creative Imprints delivered our platform in 6 weeks. The quality rivals anything I\'ve seen out of San Francisco."',
           name: 'Sara Al-Mutairi',
           role: 'CEO, Nayabank',
           avatar: 'S',
         },
         {
-          quote: '"They didn\'t just build software — they shaped our entire product thinking. A true partner."',
+          quote:
+            '"They didn\'t just build software — they shaped our entire product thinking. A true partner."',
           name: 'Omar Khalid',
           role: 'Founder, Luman Health',
           avatar: 'O',
         },
         {
-          quote: '"World-class team. Every detail is intentional. Our conversion doubled within a month."',
+          quote:
+            '"World-class team. Every detail is intentional. Our conversion doubled within a month."',
           name: 'Hala Ibrahim',
           role: 'CMO, Atlas Commerce',
           avatar: 'H',
@@ -107,15 +188,51 @@ export const defaultContent = {
     },
     portfolio: {
       label: 'SELECTED WORK',
-      title: 'Products we\'re proud of.',
+      title: "Products we're proud of.",
       categories: ['All', 'Web', 'Mobile', 'AI', 'Branding'],
       items: [
-        { title: 'NovaBank', subtitle: 'Fintech platform', category: 'Web', gradient: 'from-blue-500 to-purple-600', image: 'portfolio1.jpeg' },
-        { title: 'Passenger Transport Application', subtitle: 'passenger transport application App', category: 'Mobile', gradient: 'from-purple-500 to-pink-600', image: 'portfolio2.jpeg' },
-        { title: 'Online Store', subtitle: 'online store', category: 'AI', gradient: 'from-cyan-500 to-teal-600', image: 'portfolio3.jpeg' },
-        { title: 'Educational Platform', subtitle: 'educational platform', category: 'Web', gradient: 'from-orange-500 to-red-600', image: 'portfolio4.jpeg' },
-        { title: 'Visual Identity', subtitle: 'Identity system', category: 'Branding', gradient: 'from-teal-500 to-cyan-600', image: 'portfolio5.jpeg' },
-        { title: 'Pulse Learn', subtitle: 'Education platform', category: 'Mobile', gradient: 'from-blue-600 to-indigo-700', image: 'portfolio6.jpeg' },
+        {
+          title: 'NovaBank',
+          subtitle: 'Fintech platform',
+          category: 'Web',
+          gradient: 'from-blue-500 to-purple-600',
+          image: 'portfolio1.jpeg',
+        },
+        {
+          title: 'Passenger Transport',
+          subtitle: 'Transport App',
+          category: 'Mobile',
+          gradient: 'from-purple-500 to-pink-600',
+          image: 'portfolio2.jpeg',
+        },
+        {
+          title: 'Online Store',
+          subtitle: 'E-commerce site',
+          category: 'Web',
+          gradient: 'from-cyan-500 to-teal-600',
+          image: 'portfolio3.jpeg',
+        },
+        {
+          title: 'Educational Platform',
+          subtitle: 'LMS Platform',
+          category: 'Web',
+          gradient: 'from-orange-500 to-red-600',
+          image: 'portfolio4.jpeg',
+        },
+        {
+          title: 'Visual Identity',
+          subtitle: 'Brand system',
+          category: 'Branding',
+          gradient: 'from-teal-500 to-cyan-600',
+          image: 'portfolio5.jpeg',
+        },
+        {
+          title: 'Pulse Learn',
+          subtitle: 'Education platform',
+          category: 'Mobile',
+          gradient: 'from-blue-600 to-indigo-700',
+          image: 'portfolio6.jpeg',
+        },
       ],
     },
     footer: {
@@ -126,143 +243,260 @@ export const defaultContent = {
         social: ['twitter', 'linkedin', 'instagram', 'github'],
       },
       copyright: '© 2024 Creative Imprints. All rights reserved.',
-     
     },
   },
+
   ar: {
     seo: {
       title: 'كرياتيف إمبرينتس — منتجات رقمية سينمائية',
-      description: 'نصنع منتجات رقمية سينمائية. استوديو يعمل عن كثب مع تجارب الهاتف المحمول والويب والذكاء الاصطناعي للعلامات التجارية الطموحة حول العالم.',
-      keywords: 'استوديو رقمي, تطوير ويب, تطبيقات جوال, حلول ذكاء اصطناعي, علامات تجارية',
+      description:
+        'نصنع منتجات رقمية سينمائية. استوديو يعمل عن كثب مع تجارب الهاتف المحمول والويب والذكاء الاصطناعي للعلامات التجارية الطموحة حول العالم.',
+      keywords:
+        'استوديو رقمي, تطوير ويب, تطبيقات جوال, حلول ذكاء اصطناعي, علامات تجارية',
       url: 'https://www.creativeimprints.com',
     },
     navbar: {
       brandName: 'كرياتيف إمبرينتس',
-      brandTag: 'استوديو رقمي سينمائي',
+      brandTag: 'استوديو برمجيات وذكاء اصطناعي',
       links: [
         { label: 'الرئيسية', target: 'home' },
-        { label: 'حولنا', target: 'about' },
-        { label: 'الخبرات', target: 'expertise' },
+        { label: 'حول', target: 'about' },
+        { label: 'خبراتنا', target: 'expertise' },
         { label: 'لماذا نحن', target: 'why-us' },
         { label: 'آراء العملاء', target: 'testimonials' },
-        { label: 'الأعمال', target: 'portfolio' },
-        { label: 'تواصل', target: 'contact' },
+        { label: 'أعمالنا', target: 'portfolio' },
+        { label: 'اتصل بنا', target: 'contact' },
       ],
       langButton: 'EN',
     },
     hero: {
-      title: 'نصنع منتجات رقمية سينمائية.',
-      subtitle: 'كرياتيف إمبرينتس يبني تجارب ويب وهاتف محمول وذكاء اصطناعي عالمية المستوى للعلامات التجارية الطموحة حول العالم.',
+      title: 'نحوِّل أفكارك إلى واقع رقمي مبهر.',
+      subtitle:
+        'في كرياتيف إمبرينتس، نمزج التكنولوجيا بالإبداع لنترك بصمة لا تُنسى في عالم البرمجيات.',
       button: 'ابدأ مشروعك →',
     },
     stats: [
-      { value: '١٢٠+', label: 'مشروع تم تسليمه' },
-      { value: '٨٠+', label: 'عميل محلي' },
-      { value: '١٥+', label: 'دولة' },
-      { value: '٧+', label: 'سنوات عمل' },
+      { value: '95%', label: 'رضا ودعم متواصل' },
+      { value: '5+', label: 'سنوات من الخبرة' },
+      { value: '100+', label: 'عميل سعيد' },
+      { value: '239+', label: 'مشروع منجز' },
     ],
     studio: {
-      title: 'استوديو مهندس للمستقبل.',
-      subtitle: 'نحن فريق متعدد التخصصات من المهندسين والمصممين وأخصائيي الذكاء الاصطناعي. نتعاون مع المؤسسين والشركات لبناء منتجات تبدو حتمية — سريعة وجميلة وقابلة للتوسع.',
-      vision: 'أن نكون المحرك الإبداعي وراء الجيل القادم من المنتجات الرقمية في العالم الحقيقي وما بعده.',
-      mission: 'تمكين كل علامة تجارية طموحة من خلال برامج تعمل بمعايير عالمية.',
+      title: 'استوديو صُمم للمستقبل.',
+      subtitle:
+        'نحن فريق متعدد التخصصات يضم مهندسين ومصممين وخبراء ذكاء اصطناعي. نتعاون مع المؤسسين والشركات لبناء منتجات تبدو حتمية — سريعة وجميلة وقابلة للتوسع.',
+      vision:
+        'أن نكون المحرك الإبداعي وراء الجيل القادم من المنتجات الرقمية في العالم الحقيقي وما بعده.',
+      mission:
+        'تمكين كل علامة تجارية طموحة من خلال برمجيات تقدم أداءً بمعايير عالمية.',
     },
     expertise: {
-      title: 'خبرة شاملة في المنتجات.',
-      subtitle: 'من رسمة على منديل إلى مليون مستخدم — نغطي كل طبقة من طبقات المنتج الحديث.',
+      title: 'خبرة شاملة في تطوير المنتجات.',
+      subtitle:
+        'من رسمة أولية إلى مليون مستخدم — نغطي كل طبقات حزمة المنتج الحديث.',
       items: [
-        { title: 'تطبيقات الجوال', description: 'تطبيقات أصلية ومتعددة المنصات بأداء ثابت وحديث وقابل للتوسع.', icon: '📱' },
-        { title: 'منصات الويب', description: 'تجربة ويب فائقة السرعة ومحسّنة لمحركات البحث مبنية على تقنيات حديثة.', icon: '🌐' },
-        { title: 'التجارة الإلكترونية', description: 'متاجر وأسواق عالية التحويل مصممة خصيصاً لعلامتك التجارية.', icon: '🛒' },
-        { title: 'منصات التعلم', description: 'تصميم واجهات وتجارب مستخدم مخصصة لمنتجات تعليمية ممتعة.', icon: '📚' },
-        { title: 'تصميم UI/UX', description: 'عناصر ضرورية لتصميم أنظمة وتدفقات مستخدم سلسة.', icon: '🎨' },
-        { title: 'حلول الذكاء الاصطناعي', description: 'وكلاء ذكاء اصطناعي مخصصون، أنظمة RAG، وميزات ذكاء اصطناعي مدمجة في منتجك.', icon: '🤖' },
-        { title: 'العلامة التجارية', description: 'تحقيق الدخل من علامتك التجارية من خلال تصميم تطبيقات الجوال الأصلية.', icon: '✨' },
-        { title: 'الأنظمة السحابية', description: 'بنية تحتية موثوقة وآمنة مصممة للتوسع إلى الملايين.', icon: '☁️' },
-        { title: 'التحول الرقمي', description: 'تحديث العمليات القديمة إلى إيرادات رقمية قابلة للقياس.', icon: '⚡' },
+        {
+          title: 'تطبيقات الجوال',
+          description:
+            'تطبيقات أصلية ومتعددة المنصات بحركة سينمائية وأداء متين.',
+          icon: '📱',
+        },
+        {
+          title: 'منصات الويب',
+          description:
+            'تجارب ويب فائقة السرعة ومُحسَّنة لمحركات البحث مبنية بأحدث التقنيات.',
+          icon: '🌐',
+        },
+        {
+          title: 'التجارة الإلكترونية',
+          description:
+            'متاجر وأسواق عالية التحويل مصممة خصيصاً لعلامتك التجارية.',
+          icon: '🛒',
+        },
+        {
+          title: 'منصات التعلم',
+          description:
+            'أنظمة إدارة تعلم قابلة للتوسع ومنتجات تعليمية بتجربة مستخدم مبهجة.',
+          icon: '🎓',
+        },
+        {
+          title: 'تصميم واجهات وتجربة المستخدم',
+          description:
+            'أنظمة تصميم وواجهات مدفوعة بالبحث تبدو طبيعية ومقنعة.',
+          icon: '🎨',
+        },
+        {
+          title: 'حلول الذكاء الاصطناعي',
+          description:
+            'وكلاء LLM مخصصون، خطوط RAG، وميزات ذكاء اصطناعي مدمجة في منتجك.',
+          icon: '🤖',
+        },
+        {
+          title: 'العلامات التجارية',
+          description:
+            'أنظمة هوية تحوِّل الاستراتيجية إلى جاذبية بصرية مؤثرة.',
+          icon: '✨',
+        },
+        {
+          title: 'الأنظمة السحابية',
+          description:
+            'بنية تحتية مرنة وآمنة مصممة للتوسع إلى الملايين من المستخدمين.',
+          icon: '☁️',
+        },
+        {
+          title: 'التحول الرقمي',
+          description:
+            'تحديث العمليات التقليدية إلى قوة رقمية قابلة للقياس.',
+          icon: '🚀',
+        },
       ],
     },
     builtDifferent: {
-      title: 'مصنوع بشكل مختلف. مصنوع ليدوم.',
+      title: 'مصمم بطريقة مختلفة. مصمم ليدوم.',
       items: [
-        { title: 'تقنيات حديثة', description: 'تسعير بسيط وشفاف.', icon: '⚙️' },
-        { title: 'مهووس بالسرعة', description: '"لم يبنوا البرمجيات فقط — لقد شحنوا كامل فكر منتجنا." شريك حقيقي.', icon: '🚀' },
-        { title: 'فريق خبير', description: 'لا اختصارات — فقط قدرات مثبتة.', icon: '👥' },
-        { title: 'منصة فائقة', description: 'Pulsar Learn.', icon: '💎' },
-      ],
-    },
-    pricing: {
-      title: 'تسعير بسيط وشفاف.',
-      items: [
-        { name: 'أساسي', price: '٢٬٥٠٠ دولار', description: 'عرض لفترة محدودة', buttonText: 'ابدأ الآن', buttonLink: '#contact' },
-        { name: 'احترافي', price: '٩٬٨٠٠ دولار', description: 'حزمة منتج كاملة', buttonText: 'ابدأ الآن', buttonLink: '#contact' },
-        { name: 'مخصص', price: 'مخصص', description: 'حلول مصممة خصيصاً', buttonText: 'اتصل بنا', buttonLink: '#contact' },
-        { name: 'لنتحدث', price: 'جدول', description: 'احجز مكالمة معنا اليوم', buttonText: 'احجز مكالمة', buttonLink: 'https://cal.com/creativeimprints' },
+        {
+          title: 'تقنيات حديثة',
+          description:
+            'نعمل بأحدث الأطر والتقنيات ونماذج الذكاء الاصطناعي دائماً.',
+          icon: '🧠',
+        },
+        {
+          title: 'مهووس بالسرعة',
+          description:
+            'نطلق المنتجات في أسابيع وليس أرباع السنة — بدون التضحية بالجودة.',
+          icon: '⚡',
+        },
+        {
+          title: 'الأمان أولاً',
+          description:
+            'أمان وامتثال على مستوى المؤسسات مدمج منذ اليوم الأول.',
+          icon: '🛡️',
+        },
+        {
+          title: 'قابل للتوسع بلا حدود',
+          description:
+            'بنيات معمارية خاضعة لاختبارات مكثفة من الـ MVP إلى ملايين المستخدمين.',
+          icon: '📈',
+        },
+        {
+          title: 'فريق من الخبراء',
+          description:
+            'لا مبتدئين يتعلمون على حسابك — فقط متخصصون ذوو خبرة مثبتة.',
+          icon: '👥',
+        },
+        {
+          title: 'تجربة مستخدم محبوكة',
+          description:
+            'عناية فائقة بالبكسل. حركات تسر الناظر. تفاصيل تحقق التحويل.',
+          icon: '🎯',
+        },
       ],
     },
     finalCta: {
       title: 'هل لديك مشروع في ذهنك؟',
-      subtitle: 'أخبرنا عن فكرتك. عادة ما نرد في غضون ٢٤ ساعة.',
+      subtitle: 'أخبرنا عن فكرتك. نرد عادةً في غضون 24 ساعة.',
       label: 'لنتحدث',
       email: 'hello@creativeimprints.com',
       phone: '+123 00 000 0000',
-      location: 'الرياض • دبي • عن بعد',
-      whatsapp: 'دردشة عبر WhatsApp',
+      location: 'الرياض • دبي • عن بُعد',
+      whatsapp: 'دردشة عبر واتساب',
       formLabels: {
-        name: 'اسمك',
-        email: 'عنوان البريد الإلكتروني',
+        name: 'الاسم الكامل',
+        email: 'البريد الإلكتروني',
         project: 'أخبرنا عن مشروعك',
-        submit: 'إرسال الرسالة',
-      }
+        submit: 'أرسل الرسالة',
+      },
     },
     testimonials: {
-      label: 'يحبنا المؤسسون',
-      title: 'موثوق به من قبل الشجعان.',
+      label: 'محبوبون من المؤسسين',
+      title: 'موثوقون من الجريئين.',
       items: [
         {
-          quote: 'قدمت Creative Imprints منصتنا في 6 أسابيع. الجودة تضاهي أي شيء رأيته خارج سان فرانسيسكو.',
-          name: 'سارة المتيري',
+          quote:
+            '"قدمت Creative Imprints منصتنا في 6 أسابيع. الجودة تنافس أي شيء رأيته خارج سان فرانسيسكو."',
+          name: 'سارة المطيري',
           role: 'الرئيس التنفيذي، نايابنك',
-          avatar: 'S',
+          avatar: 'س',
         },
         {
-          quote: 'لم يقوموا ببناء البرمجيات فقط - فقد شكلوا تفكيرنا المنتج بالكامل. شريك حقيقي.',
+          quote:
+            '"لم يبنوا مجرد برمجيات — بل شكلوا كامل فكر منتجنا. شريك حقيقي."',
           name: 'عمر خالد',
           role: 'المؤسس، لومان هيلث',
-          avatar: 'O',
+          avatar: 'ع',
         },
         {
-          quote: 'فريق عالمي المستوى. كل التفاصيل مقصودة. تضاعفت التحويلات في غضون شهر.',
+          quote:
+            '"فريق عالمي. كل التفاصيل مدروسة. تضاعفت التحويلات في شهر واحد."',
           name: 'هالة إبراهيم',
-          role: 'مدير التسويق، أطلس كومرس',
-          avatar: 'H',
+          role: 'مديرة التسويق، أطلس كومرس',
+          avatar: 'ه',
         },
       ],
     },
     portfolio: {
-      label: 'أعمالنا المختارة',
-      title: 'المنتجات التي نفخر بها.',
-      categories: ['الكل', 'ويب', 'جوال', 'ذكاء اصطناعي', 'العلامات'],
+      label: 'أعمال مختارة',
+      title: 'منتجات نفخر بها.',
+      categories: ['الكل', 'ويب', 'جوال', 'ذكاء اصطناعي', 'علامات تجارية'],
       items: [
-        { title: 'نوفابنك', subtitle: 'منصة مالية', category: 'ويب', gradient: 'from-blue-500 to-purple-600', image: 'portfolio1.jpeg' },
-        { title: 'لومان هيلث', subtitle: 'تطبيق طب عن بعد', category: 'جوال', gradient: 'from-purple-500 to-pink-600', image: 'portfolio2.jpeg' },
-        { title: 'أوربيتال إيه آي', subtitle: 'مجموعة وكلاء LLM', category: 'ذكاء اصطناعي', gradient: 'from-cyan-500 to-teal-600', image: 'portfolio3.jpeg' },
-        { title: 'أطلس كومرس', subtitle: 'متجر بدون رأس', category: 'ويب', gradient: 'from-orange-500 to-red-600', image: 'portfolio4.jpeg' },
-        { title: 'فويج', subtitle: 'نظام الهوية', category: 'العلامات', gradient: 'from-teal-500 to-cyan-600', image: 'portfolio5.jpeg' },
-        { title: 'بالس لرن', subtitle: 'منصة تعليمية', category: 'جوال', gradient: 'from-blue-600 to-indigo-700', image: 'portfolio6.jpeg' },
+        {
+          title: 'نوفابنك',
+          subtitle: 'منصة تقنية مالية',
+          category: 'ويب',
+          gradient: 'from-blue-500 to-purple-600',
+          image: 'portfolio1.jpeg',
+        },
+        {
+          title: 'تطبيق نقل الركاب',
+          subtitle: 'تطبيق مواصلات',
+          category: 'جوال',
+          gradient: 'from-purple-500 to-pink-600',
+          image: 'portfolio2.jpeg',
+        },
+        {
+          title: 'متجر إلكتروني',
+          subtitle: 'متجر عبر الإنترنت',
+          category: 'ويب',
+          gradient: 'from-cyan-500 to-teal-600',
+          image: 'portfolio3.jpeg',
+        },
+        {
+          title: 'منصة تعليمية',
+          subtitle: 'منصة تعليم إلكتروني',
+          category: 'ويب',
+          gradient: 'from-orange-500 to-red-600',
+          image: 'portfolio4.jpeg',
+        },
+        {
+          title: 'الهوية البصرية',
+          subtitle: 'نظام العلامة التجارية',
+          category: 'علامات تجارية',
+          gradient: 'from-teal-500 to-cyan-600',
+          image: 'portfolio5.jpeg',
+        },
+        {
+          title: 'بالس ليرن',
+          subtitle: 'منصة تعليمية',
+          category: 'جوال',
+          gradient: 'from-blue-600 to-indigo-700',
+          image: 'portfolio6.jpeg',
+        },
       ],
     },
     footer: {
       brandName: 'كرياتيف إمبرينتس',
-      tagline: 'صنع مستقبل المنتجات الرقمية.',
+      tagline: 'نصنع مستقبل المنتجات الرقمية.',
       links: {
-        navigate: ['حول', 'الخدمات', 'الأعمال', 'الأسعار'],
+        navigate: ['حول', 'خدمات', 'أعمال', 'أسعار'],
         social: ['تويتر', 'لينكدإن', 'انستغرام', 'جيتهاب'],
       },
-      copyright: '© ٢٠٢٤ كرياتيف إمبرينتس. جميع الحقوق محفوظة.',
-      credits: 'صُنع بعناية • الرياض',
+      copyright: '© 2024 كرياتيف إمبرينتس. جميع الحقوق محفوظة.',
     },
   },
 };
+
+
+
+
 
 export default defaultContent;
