@@ -491,7 +491,7 @@ a {
 
 .studio-card {
   padding: 40px 36px;
-  min-height: 320px;
+  min-height: 220px;
   display: grid;
   grid-template-columns: 84px 1fr;
   gap: 24px;
@@ -1721,7 +1721,7 @@ a {
 .contact-item {
   display: flex;
   gap: 16px;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .contact-icon {

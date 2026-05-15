@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import heroBg from '../assets/pictures/hero-bg.jpg';
 
 const stats = [
-  { value: '120+', label: 'Projects delivered' },
-  { value: '80+', label: 'Happy clients' },
-  { value: '15+', label: 'Countries' },
-  { value: '7+', label: 'Years of craft' },
+  { value: '95%', label: 'Satisfaction and ongoing support' },
+  { value: '5+', label: 'Years of experience' },
+  { value: '100+', label: 'Happy clients' },
+  { value: '239+', label: 'Projects delivered' },
 ];
 
 const pillVariants = {
@@ -27,10 +27,32 @@ const sparkles = [
   { className: 'hero-orb hero-orb--sm', style: { bottom: '34%', left: '4%' } },
 ];
 
+const parseStatValue = (value) => {
+  const match = value.match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
+
+  if (!match) {
+    return null;
+  }
+
+  return {
+    prefix: match[1],
+    target: Number(match[2]),
+    suffix: match[3],
+  };
+};
+
+const formatStatValue = (parts, count) => `${parts.prefix}${count}${parts.suffix}`;
+
 const HeroSection = ({ copy }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
+  const [animatedStats, setAnimatedStats] = useState(() =>
+    stats.map((stat) => {
+      const parsed = parseStatValue(stat.value);
+      return parsed ? formatStatValue(parsed, 0) : stat.value;
+    })
   );
 
   useEffect(() => {
@@ -45,6 +67,46 @@ const HeroSection = ({ copy }) => {
       window.matchMedia('(prefers-reduced-motion: reduce)').removeEventListener('change', handleMotionChange);
     };
   }, []);
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setAnimatedStats(stats.map((stat) => stat.value));
+      return;
+    }
+
+    const parsedStats = stats.map((stat) => parseStatValue(stat.value));
+    const animationDuration = 5000;
+    const startTime = performance.now();
+    let frameId;
+
+    const animate = (now) => {
+      const progress = Math.min((now - startTime) / animationDuration, 1);
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+
+      setAnimatedStats(
+        stats.map((stat, index) => {
+          const parsed = parsedStats[index];
+
+          if (!parsed) {
+            return stat.value;
+          }
+
+          const currentValue = Math.round(parsed.target * easedProgress);
+          return formatStatValue(parsed, currentValue);
+        })
+      );
+
+      if (progress < 1) {
+        frameId = window.requestAnimationFrame(animate);
+      }
+    };
+
+    frameId = window.requestAnimationFrame(animate);
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
+  }, [prefersReducedMotion]);
 
   const scrollToContact = () => {
     const ctaSection = document.getElementById('contact');
@@ -99,9 +161,9 @@ const HeroSection = ({ copy }) => {
           </motion.div>
 
           <motion.h1 className="hero-title" variants={prefersReducedMotion ? {} : pillVariants} custom={0.08}>
-            <span className="hero-title__line">We craft</span>
-            <span className="hero-title__line hero-title__line--accent">cinematic digital</span>
-            <span className="hero-title__line">products.</span>
+            <span className="hero-title__line">We turn</span>
+            <span className="hero-title__line hero-title__line--accent">your ideas</span>
+            <span className="hero-title__line">into a dazzling digital reality.</span>
           </motion.h1>
 
           <motion.p className="hero-subtitle" variants={prefersReducedMotion ? {} : pillVariants} custom={0.16}>
@@ -120,9 +182,9 @@ const HeroSection = ({ copy }) => {
           </motion.div>
 
           <motion.div className="hero-stats" variants={prefersReducedMotion ? {} : pillVariants} custom={0.32}>
-            {stats.map((stat) => (
+            {stats.map((stat, idx) => (
               <div key={stat.label} className="hero-stat-card">
-                <strong>{stat.value}</strong>
+                <strong>{animatedStats[idx]}</strong>
                 <span>{stat.label}</span>
               </div>
             ))}

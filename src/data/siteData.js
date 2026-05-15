@@ -23,15 +23,15 @@ export const defaultContent = {
       langButton: 'AR',
     },
     hero: {
-      title: 'We craft cinematic digital products.',
-      subtitle: 'Creative Imprints builds world-class web, mobile, and AI experiences for ambitious brands across the globe.',
+      title: 'We turn your ideas into a dazzling digital reality.',
+      subtitle: 'At Creative Imprint,we combine teachnology and creativity to leave an unforgettable mark on the world of software .',
       button: 'Start your project →',
     },
     stats: [
-      { value: '120+', label: 'Projects delivered' },
-      { value: '80+', label: 'Native clients' },
-      { value: '15+', label: 'Countries' },
-      { value: '7+', label: 'Years of work' },
+      { value: '95%', label: 'Satisfaction and ongoing support' },
+      { value: '5+', label: 'Years of experience' },
+      { value: '100+', label: 'Happy clients' },
+      { value: '239+', label: 'Projects delivered' },
     ],
     studio: {
       title: 'A studio engineered for the future.',
@@ -65,22 +65,14 @@ export const defaultContent = {
         { title: 'Crafted UX', description: 'Pixel-level care. Motion that delights. Details that convert.', icon: '🎯' },
       ],
     },
-    pricing: {
-      title: 'Simple, transparent pricing.',
-      items: [
-        { name: 'Essential', price: '$2,500', description: 'Limited time offer', buttonText: 'Get started', buttonLink: '#contact' },
-        { name: 'Pro', price: '$9,800', description: 'Full product suite', buttonText: 'Get started', buttonLink: '#contact' },
-        { name: 'Custom', price: 'Custom', description: 'Tailored solutions', buttonText: 'Contact us', buttonLink: '#contact' },
-        { name: "Let's talk", price: 'Schedule', description: 'Book a call with us today', buttonText: 'Book a call', buttonLink: 'https://cal.com/creativeimprints' },
-      ],
-    },
+   
     finalCta: {
       title: 'Have a project in mind?',
       subtitle: 'Tell us about your idea. We typically respond within 24 hours.',
       label: 'LET\'S TALK',
       email: 'hello@creativeimprints.com',
-      phone: '+966 50 000 0000',
-      location: 'Riyadh • Dubai • Remote',
+      phone: '+123 00 000 0000',
+      location: 'Business park - Vbc -111',
       whatsapp: 'Chat on WhatsApp',
       formLabels: {
         name: 'YOUR NAME',
@@ -119,10 +111,10 @@ export const defaultContent = {
       categories: ['All', 'Web', 'Mobile', 'AI', 'Branding'],
       items: [
         { title: 'NovaBank', subtitle: 'Fintech platform', category: 'Web', gradient: 'from-blue-500 to-purple-600', image: 'portfolio1.jpeg' },
-        { title: 'Lumen Health', subtitle: 'Telemedicine app', category: 'Mobile', gradient: 'from-purple-500 to-pink-600', image: 'portfolio2.jpeg' },
-        { title: 'Orbital AI', subtitle: 'LLM agent suite', category: 'AI', gradient: 'from-cyan-500 to-teal-600', image: 'portfolio3.jpeg' },
-        { title: 'Atlas Commerce', subtitle: 'Headless storefront', category: 'Web', gradient: 'from-orange-500 to-red-600', image: 'portfolio4.jpeg' },
-        { title: 'Voyage', subtitle: 'Identity system', category: 'Branding', gradient: 'from-teal-500 to-cyan-600', image: 'portfolio5.jpeg' },
+        { title: 'Passenger Transport Application', subtitle: 'passenger transport application App', category: 'Mobile', gradient: 'from-purple-500 to-pink-600', image: 'portfolio2.jpeg' },
+        { title: 'Online Store', subtitle: 'online store', category: 'AI', gradient: 'from-cyan-500 to-teal-600', image: 'portfolio3.jpeg' },
+        { title: 'Educational Platform', subtitle: 'educational platform', category: 'Web', gradient: 'from-orange-500 to-red-600', image: 'portfolio4.jpeg' },
+        { title: 'Visual Identity', subtitle: 'Identity system', category: 'Branding', gradient: 'from-teal-500 to-cyan-600', image: 'portfolio5.jpeg' },
         { title: 'Pulse Learn', subtitle: 'Education platform', category: 'Mobile', gradient: 'from-blue-600 to-indigo-700', image: 'portfolio6.jpeg' },
       ],
     },
@@ -134,7 +126,7 @@ export const defaultContent = {
         social: ['twitter', 'linkedin', 'instagram', 'github'],
       },
       copyright: '© 2024 Creative Imprints. All rights reserved.',
-      credits: 'Made with care • Riyadh',
+     
     },
   },
   ar: {
@@ -213,7 +205,7 @@ export const defaultContent = {
       subtitle: 'أخبرنا عن فكرتك. عادة ما نرد في غضون ٢٤ ساعة.',
       label: 'لنتحدث',
       email: 'hello@creativeimprints.com',
-      phone: '+966 50 000 0000',
+      phone: '+123 00 000 0000',
       location: 'الرياض • دبي • عن بعد',
       whatsapp: 'دردشة عبر WhatsApp',
       formLabels: {
