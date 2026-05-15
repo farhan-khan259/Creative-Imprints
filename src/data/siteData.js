@@ -236,14 +236,24 @@ export const defaultContent = {
       ],
     },
     footer: {
-      brandName: 'Creative Imprints',
-      tagline: 'Crafting the future of digital products.',
-      links: {
-        navigate: ['About', 'Services', 'Portfolio', 'Pricing'],
-        social: ['twitter', 'linkedin', 'instagram', 'github'],
-      },
-      copyright: '© 2024 Creative Imprints. All rights reserved.',
-    },
+  brandName: 'Creative Imprints',
+  tagline: 'Crafting the future of digital products.',
+  links: {
+    navigate: [
+      'Home',
+      'About',
+      'Expertise',
+      'Why Us',
+      'Testimonials',
+      'Portfolio',
+      'Contact',
+    ],
+    social: ['twitter', 'linkedin', 'instagram', 'github'],
+  },
+  copyright: '© 2024 Creative Imprints. All rights reserved.',
+  footerNavigateLabel: 'Navigate',
+  footerSocialLabel: 'Social',
+},
   },
 
   ar: {
@@ -483,15 +493,25 @@ export const defaultContent = {
         },
       ],
     },
-    footer: {
-      brandName: 'كرياتيف إمبرينتس',
-      tagline: 'نصنع مستقبل المنتجات الرقمية.',
-      links: {
-        navigate: ['حول', 'خدمات', 'أعمال', 'أسعار'],
-        social: ['تويتر', 'لينكدإن', 'انستغرام', 'جيتهاب'],
-      },
-      copyright: '© 2024 كرياتيف إمبرينتس. جميع الحقوق محفوظة.',
-    },
+  footer: {
+  brandName: 'كرياتيف إمبرينتس',
+  tagline: 'نصنع مستقبل المنتجات الرقمية.',
+  links: {
+    navigate: [
+      'الرئيسية',
+      'حول',
+      'خبراتنا',
+      'لماذا نحن',
+      'آراء العملاء',
+      'أعمالنا',
+      'اتصل بنا',
+    ],
+    social: ['تويتر', 'لينكدإن', 'انستغرام', 'جيتهاب'],
+  },
+  copyright: '© 2024 كرياتيف إمبرينتس. جميع الحقوق محفوظة.',
+  footerNavigateLabel: 'تصفح',
+  footerSocialLabel: 'تواصل اجتماعي',
+},
   },
 };
 
