@@ -84,11 +84,6 @@ const AdminPage = ({ lang, toggleLang, content, onContentUpdate, storageKey }) =
     });
   };
 
-  // Updaters for specific complex sections
-  const updatePricingItem = (index, field, value) => {
-    // Pricing section not currently used, but kept for compatibility
-  };
-
   const updateBuiltDifferentItem = (index, field, value) => {
     setDraftContent(prev => ({
       ...prev,
