@@ -62,24 +62,34 @@ function AppContent({ lang, setLang, content, setContent }) {
 
 function App() {
   const [lang, setLang] = useState('en');
-  const [content, setContent] = useState(defaultContent.en);
 
-  useEffect(() => {
-    // Load saved content from localStorage if exists
+  // contentStore holds per-language copies, e.g. { en: {...}, ar: {...} }
+  const [contentStore, setContentStore] = useState(() => {
     const saved = localStorage.getItem('cimprints_admin');
     if (saved) {
       try {
-        const parsed = JSON.parse(saved);
-        setContent(parsed);
+        return JSON.parse(saved);
       } catch (e) {
         console.error('Failed to parse saved content:', e);
       }
     }
-  }, []);
+    return defaultContent;
+  });
 
-  useEffect(() => {
-    setContent(defaultContent[lang]);
-  }, [lang]);
+  const content = contentStore[lang] || defaultContent[lang];
+
+  // Update current language content and persist to localStorage
+  const setContent = (nextContent) => {
+    setContentStore((prev) => {
+      const updated = { ...(prev || {}), [lang]: nextContent };
+      try {
+        localStorage.setItem('cimprints_admin', JSON.stringify(updated));
+      } catch (e) {
+        // ignore storage errors
+      }
+      return updated;
+    });
+  };
 
   // Custom cursor effect - only on desktop
   useEffect(() => {

@@ -69,3 +69,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 # Creative-Imprints
+
+## CMS server
+
+Run the MongoDB-backed CMS and serve the standalone pages with:
+
+```bash
+npm run cms
+```
+
+Then open `http://localhost:3001/` for the site and `http://localhost:3001/admin.html` for the admin panel.
