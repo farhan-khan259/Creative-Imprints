@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const ExpertiseSection = ({ copy }) => (
   <section id="expertise" className="section expertise-section">
     <div className="section__header">
-      <span className="section__label">What we do</span>
+      <span className="section__label">{copy.label || 'What we do'}</span>
       <h2>{copy.title}</h2>
       <p className="section__description">{copy.subtitle}</p>
     </div>

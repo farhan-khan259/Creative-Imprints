@@ -415,6 +415,18 @@ a {
   transform: translateY(-3px);
 }
 
+.button--secondary {
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+}
+
+.button--secondary:hover {
+  border-color: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-3px);
+}
+
 /* ----------------------------------------------
    GLASS CARD UTILITY
 ------------------------------------------------- */

@@ -109,7 +109,7 @@ const Navbar = ({ lang, copy, toggleLang }) => {
               {copy.langButton}
             </button>
             <a href="#contact" className="button button--primary navbar__cta" onClick={() => setMenuOpen(false)}>
-              Start a project
+              {copy.cta || 'Start a project'}
             </a>
           </div>
         </nav>
@@ -119,7 +119,7 @@ const Navbar = ({ lang, copy, toggleLang }) => {
             {copy.langButton}
           </button>
           <a href="#contact" className="button button--primary navbar__cta">
-            Start a project
+            {copy.cta || 'Start a project'}
           </a>
         </div>
 

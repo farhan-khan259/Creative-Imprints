@@ -12,6 +12,7 @@ export const defaultContent = {
     navbar: {
       brandName: 'Creative Imprints',
       brandTag: 'Software & AI Studio',
+      cta: 'Start a project',
       links: [
         { label: 'Home', target: 'home' },
         { label: 'About', target: 'about' },
@@ -24,10 +25,12 @@ export const defaultContent = {
       langButton: 'AR',
     },
     hero: {
+      badge: 'Premium Software & AI Studio',
       title: 'We turn your ideas into a dazzling digital reality.',
       subtitle:
         'At Creative Imprints, we combine technology and creativity to leave an unforgettable mark on the world of software.',
       button: 'Start your project →',
+      secondaryButton: 'Explore work',
     },
     stats: [
       { value: '95%', label: 'Satisfaction and ongoing support' },
@@ -36,6 +39,7 @@ export const defaultContent = {
       { value: '239+', label: 'Projects delivered' },
     ],
     studio: {
+      label: 'About',
       title: 'A studio engineered for the future.',
       subtitle:
         'We are a multidisciplinary team of engineers, designers, and AI specialists. We partner with founders and enterprises to build products that feel inevitable — fast, beautiful, and built to scale.',
@@ -45,6 +49,7 @@ export const defaultContent = {
         'Empower every ambitious brand with software that performs at a world‑class standard.',
     },
     expertise: {
+      label: 'Expertise',
       title: 'End-to-end product expertise.',
       subtitle:
         'From a sketch on a napkin to a million users — we cover every layer of the modern product stack.',
@@ -106,6 +111,7 @@ export const defaultContent = {
       ],
     },
     builtDifferent: {
+      label: 'Why Creative Imprints',
       title: 'Built different. Built to last.',
       items: [
         {
@@ -145,9 +151,9 @@ export const defaultContent = {
       ],
     },
     finalCta: {
+      label: "LET'S TALK",
       title: 'Have a project in mind?',
       subtitle: 'Tell us about your idea. We typically respond within 24 hours.',
-      label: "LET'S TALK",
       email: 'hello@creativeimprints.com',
       phone: '+123 00 000 0000',
       location: 'Business park - Vbc -111',
@@ -236,24 +242,24 @@ export const defaultContent = {
       ],
     },
     footer: {
-  brandName: 'Creative Imprints',
-  tagline: 'Crafting the future of digital products.',
-  links: {
-    navigate: [
-      'Home',
-      'About',
-      'Expertise',
-      'Why Us',
-      'Testimonials',
-      'Portfolio',
-      'Contact',
-    ],
-    social: ['twitter', 'linkedin', 'instagram', 'github'],
-  },
-  copyright: '© 2024 Creative Imprints. All rights reserved.',
-  footerNavigateLabel: 'Navigate',
-  footerSocialLabel: 'Social',
-},
+      brandName: 'Creative Imprints',
+      tagline: 'Crafting the future of digital products.',
+      links: {
+        navigate: [
+          'Home',
+          'About',
+          'Expertise',
+          'Why Us',
+          'Testimonials',
+          'Portfolio',
+          'Contact',
+        ],
+        social: ['twitter', 'linkedin', 'instagram', 'github'],
+      },
+      copyright: '© 2024 Creative Imprints. All rights reserved.',
+      footerNavigateLabel: 'Navigate',
+      footerSocialLabel: 'Social',
+    },
   },
 
   ar: {
@@ -268,6 +274,7 @@ export const defaultContent = {
     navbar: {
       brandName: 'كرياتيف إمبرينتس',
       brandTag: 'استوديو برمجيات وذكاء اصطناعي',
+      cta: 'ابدأ مشروعاً',
       links: [
         { label: 'الرئيسية', target: 'home' },
         { label: 'حول', target: 'about' },
@@ -280,10 +287,12 @@ export const defaultContent = {
       langButton: 'EN',
     },
     hero: {
+      badge: 'استوديو برمجيات وذكاء اصطناعي متميز',
       title: 'نحوِّل أفكارك إلى واقع رقمي مبهر.',
       subtitle:
         'في كرياتيف إمبرينتس، نمزج التكنولوجيا بالإبداع لنترك بصمة لا تُنسى في عالم البرمجيات.',
       button: 'ابدأ مشروعك →',
+      secondaryButton: 'استعرض الأعمال',
     },
     stats: [
       { value: '95%', label: 'رضا ودعم متواصل' },
@@ -292,6 +301,7 @@ export const defaultContent = {
       { value: '239+', label: 'مشروع منجز' },
     ],
     studio: {
+      label: 'حول',
       title: 'استوديو صُمم للمستقبل.',
       subtitle:
         'نحن فريق متعدد التخصصات يضم مهندسين ومصممين وخبراء ذكاء اصطناعي. نتعاون مع المؤسسين والشركات لبناء منتجات تبدو حتمية — سريعة وجميلة وقابلة للتوسع.',
@@ -301,6 +311,7 @@ export const defaultContent = {
         'تمكين كل علامة تجارية طموحة من خلال برمجيات تقدم أداءً بمعايير عالمية.',
     },
     expertise: {
+      label: 'خبراتنا',
       title: 'خبرة شاملة في تطوير المنتجات.',
       subtitle:
         'من رسمة أولية إلى مليون مستخدم — نغطي كل طبقات حزمة المنتج الحديث.',
@@ -362,6 +373,7 @@ export const defaultContent = {
       ],
     },
     builtDifferent: {
+      label: 'لماذا كرياتيف إمبرينتس',
       title: 'مصمم بطريقة مختلفة. مصمم ليدوم.',
       items: [
         {
@@ -403,9 +415,9 @@ export const defaultContent = {
       ],
     },
     finalCta: {
+      label: 'لنتحدث',
       title: 'هل لديك مشروع في ذهنك؟',
       subtitle: 'أخبرنا عن فكرتك. نرد عادةً في غضون 24 ساعة.',
-      label: 'لنتحدث',
       email: 'hello@creativeimprints.com',
       phone: '+123 00 000 0000',
       location: 'الرياض • دبي • عن بُعد',
@@ -494,24 +506,24 @@ export const defaultContent = {
       ],
     },
   footer: {
-  brandName: 'كرياتيف إمبرينتس',
-  tagline: 'نصنع مستقبل المنتجات الرقمية.',
-  links: {
-    navigate: [
-      'الرئيسية',
-      'حول',
-      'خبراتنا',
-      'لماذا نحن',
-      'آراء العملاء',
-      'أعمالنا',
-      'اتصل بنا',
-    ],
-    social: ['تويتر', 'لينكدإن', 'انستغرام', 'جيتهاب'],
-  },
-  copyright: '© 2024 كرياتيف إمبرينتس. جميع الحقوق محفوظة.',
-  footerNavigateLabel: 'تصفح',
-  footerSocialLabel: 'تواصل اجتماعي',
-},
+      brandName: 'كرياتيف إمبرينتس',
+      tagline: 'نصنع مستقبل المنتجات الرقمية.',
+      links: {
+        navigate: [
+          'الرئيسية',
+          'حول',
+          'خبراتنا',
+          'لماذا نحن',
+          'آراء العملاء',
+          'أعمالنا',
+          'اتصل بنا',
+        ],
+        social: ['تويتر', 'لينكدإن', 'انستغرام', 'جيتهاب'],
+      },
+      copyright: '© 2024 كرياتيف إمبرينتس. جميع الحقوق محفوظة.',
+      footerNavigateLabel: 'تصفح',
+      footerSocialLabel: 'تواصل اجتماعي',
+    },
   },
 };
 

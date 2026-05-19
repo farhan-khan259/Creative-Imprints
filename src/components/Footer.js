@@ -16,7 +16,7 @@ const Footer = ({ copy }) => {
         </div>
 
         <div className="footer-section">
-          <h5>Navigate</h5>
+          <h5>{copy.footerNavigateLabel || 'Navigate'}</h5>
           <ul>
             {copy.links.navigate.map((link, idx) => (
               <li key={idx}>
@@ -27,7 +27,7 @@ const Footer = ({ copy }) => {
         </div>
 
         <div className="footer-section">
-          <h5>Social</h5>
+          <h5>{copy.footerSocialLabel || 'Social'}</h5>
           <div className="social-links">
             <a href="https://twitter.com" title="Twitter" target="_blank" rel="noopener noreferrer">𝕏</a>
             <a href="https://linkedin.com" title="LinkedIn" target="_blank" rel="noopener noreferrer">in</a>

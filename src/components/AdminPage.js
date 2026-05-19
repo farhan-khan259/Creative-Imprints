@@ -120,6 +120,31 @@ const AdminPage = ({ lang, toggleLang, content, onContentUpdate, storageKey }) =
     }));
   };
 
+  const updatePortfolioItemImage = (index, file) => {
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      const imageData = reader.result;
+      setDraftContent((prev) => ({
+        ...prev,
+        portfolio: {
+          ...prev.portfolio,
+          items: prev.portfolio.items.map((item, itemIndex) =>
+            itemIndex === index
+              ? {
+                  ...item,
+                  image: file.name,
+                  imageData,
+                }
+              : item
+          ),
+        },
+      }));
+    };
+    reader.readAsDataURL(file);
+  };
+
   const updateFinalCtaFormLabel = (field, value) => {
     setDraftContent(prev => ({
       ...prev,
@@ -235,6 +260,10 @@ const AdminPage = ({ lang, toggleLang, content, onContentUpdate, storageKey }) =
                 <label>Brand Tag</label>
                 <input disabled={!isEditing} value={currentData.navbar?.brandTag || ''} onChange={e => updateDraftField('navbar', 'brandTag', e.target.value)} />
               </div>
+              <div className="admin-field">
+                <label>CTA Button Text</label>
+                <input disabled={!isEditing} value={currentData.navbar?.cta || ''} onChange={e => updateDraftField('navbar', 'cta', e.target.value)} />
+              </div>
               <h4 style={{ marginTop: '24px', marginBottom: '16px', color: 'var(--cyan-accent)' }}>Navigation Links</h4>
               {currentData.navbar?.links?.map((link, idx) => (
                 <div key={idx} className="admin-card-item">
@@ -255,9 +284,11 @@ const AdminPage = ({ lang, toggleLang, content, onContentUpdate, storageKey }) =
           {/* HERO */}
           {activeSection === 'hero' && (
             <div className="admin-section">
+              <div className="admin-field"><label>Badge</label><input disabled={!isEditing} value={currentData.hero?.badge || ''} onChange={e => updateDraftField('hero', 'badge', e.target.value)} /></div>
               <div className="admin-field"><label>Title</label><textarea disabled={!isEditing} rows="3" value={currentData.hero?.title || ''} onChange={e => updateDraftField('hero', 'title', e.target.value)} /></div>
               <div className="admin-field"><label>Subtitle</label><textarea disabled={!isEditing} rows="3" value={currentData.hero?.subtitle || ''} onChange={e => updateDraftField('hero', 'subtitle', e.target.value)} /></div>
               <div className="admin-field"><label>Button Text</label><input disabled={!isEditing} value={currentData.hero?.button || ''} onChange={e => updateDraftField('hero', 'button', e.target.value)} /></div>
+              <div className="admin-field"><label>Secondary Button Text</label><input disabled={!isEditing} value={currentData.hero?.secondaryButton || ''} onChange={e => updateDraftField('hero', 'secondaryButton', e.target.value)} /></div>
             </div>
           )}
 
@@ -277,16 +308,20 @@ const AdminPage = ({ lang, toggleLang, content, onContentUpdate, storageKey }) =
           {/* STUDIO */}
           {activeSection === 'studio' && (
             <div className="admin-section">
+              <div className="admin-field"><label>Section Label</label><input disabled={!isEditing} value={currentData.studio?.label || ''} onChange={e => updateDraftField('studio', 'label', e.target.value)} /></div>
               <div className="admin-field"><label>Title</label><input disabled={!isEditing} value={currentData.studio?.title || ''} onChange={e => updateDraftField('studio', 'title', e.target.value)} /></div>
               <div className="admin-field"><label>Subtitle</label><textarea disabled={!isEditing} rows="3" value={currentData.studio?.subtitle || ''} onChange={e => updateDraftField('studio', 'subtitle', e.target.value)} /></div>
               <div className="admin-field"><label>Vision</label><textarea disabled={!isEditing} rows="3" value={currentData.studio?.vision || ''} onChange={e => updateDraftField('studio', 'vision', e.target.value)} /></div>
               <div className="admin-field"><label>Mission</label><textarea disabled={!isEditing} rows="3" value={currentData.studio?.mission || ''} onChange={e => updateDraftField('studio', 'mission', e.target.value)} /></div>
+              <div className="admin-field"><label>Vision Label</label><input disabled={!isEditing} value={currentData.studio?.visionLabel || ''} onChange={e => updateDraftField('studio', 'visionLabel', e.target.value)} /></div>
+              <div className="admin-field"><label>Mission Label</label><input disabled={!isEditing} value={currentData.studio?.missionLabel || ''} onChange={e => updateDraftField('studio', 'missionLabel', e.target.value)} /></div>
             </div>
           )}
 
           {/* EXPERTISE */}
           {activeSection === 'expertise' && (
             <div className="admin-section">
+              <div className="admin-field"><label>Section Label</label><input disabled={!isEditing} value={currentData.expertise?.label || ''} onChange={e => updateDraftField('expertise', 'label', e.target.value)} /></div>
               <div className="admin-field"><label>Section Title</label><input disabled={!isEditing} value={currentData.expertise?.title || ''} onChange={e => updateDraftField('expertise', 'title', e.target.value)} /></div>
               <div className="admin-field"><label>Section Subtitle</label><textarea disabled={!isEditing} rows="2" value={currentData.expertise?.subtitle || ''} onChange={e => updateDraftField('expertise', 'subtitle', e.target.value)} /></div>
               {currentData.expertise?.items?.map((item, idx) => (
@@ -303,6 +338,7 @@ const AdminPage = ({ lang, toggleLang, content, onContentUpdate, storageKey }) =
           {/* BUILT DIFFERENT */}
           {activeSection === 'builtDifferent' && (
             <div className="admin-section">
+              <div className="admin-field"><label>Section Label</label><input disabled={!isEditing} value={currentData.builtDifferent?.label || ''} onChange={e => updateDraftField('builtDifferent', 'label', e.target.value)} /></div>
               <div className="admin-field"><label>Section Title</label><input disabled={!isEditing} value={currentData.builtDifferent?.title || ''} onChange={e => updateDraftField('builtDifferent', 'title', e.target.value)} /></div>
               {currentData.builtDifferent?.items?.map((item, idx) => (
                 <div key={idx} className="admin-card-item">
@@ -347,7 +383,13 @@ const AdminPage = ({ lang, toggleLang, content, onContentUpdate, storageKey }) =
                   <div className="admin-field"><label>Title</label><input disabled={!isEditing} value={item.title} onChange={e => updatePortfolioItem(idx, 'title', e.target.value)} /></div>
                   <div className="admin-field"><label>Subtitle</label><input disabled={!isEditing} value={item.subtitle} onChange={e => updatePortfolioItem(idx, 'subtitle', e.target.value)} /></div>
                   <div className="admin-field"><label>Category</label><input disabled={!isEditing} value={item.category} onChange={e => updatePortfolioItem(idx, 'category', e.target.value)} /></div>
-                  <div className="admin-field"><label>Image filename (e.g. portfolio1.jpeg)</label><input disabled={!isEditing} value={item.image} onChange={e => updatePortfolioItem(idx, 'image', e.target.value)} /></div>
+                  <div className="admin-field"><label>Image filename</label><input disabled={!isEditing} value={item.image || ''} onChange={e => updatePortfolioItem(idx, 'image', e.target.value)} /></div>
+                  <div className="admin-field"><label>Upload Image</label><input disabled={!isEditing} type="file" accept="image/*" onChange={e => updatePortfolioItemImage(idx, e.target.files?.[0])} /></div>
+                  {item.imageData && (
+                    <div className="admin-card-item__preview">
+                      <img src={item.imageData} alt={item.title || `Project ${idx + 1}`} />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
@@ -376,6 +418,8 @@ const AdminPage = ({ lang, toggleLang, content, onContentUpdate, storageKey }) =
             <div className="admin-section">
               <div className="admin-field"><label>Brand Name</label><input disabled={!isEditing} value={currentData.footer?.brandName || ''} onChange={e => updateDraftField('footer', 'brandName', e.target.value)} /></div>
               <div className="admin-field"><label>Tagline</label><input disabled={!isEditing} value={currentData.footer?.tagline || ''} onChange={e => updateDraftField('footer', 'tagline', e.target.value)} /></div>
+              <div className="admin-field"><label>Navigate Heading</label><input disabled={!isEditing} value={currentData.footer?.footerNavigateLabel || ''} onChange={e => updateDraftField('footer', 'footerNavigateLabel', e.target.value)} /></div>
+              <div className="admin-field"><label>Social Heading</label><input disabled={!isEditing} value={currentData.footer?.footerSocialLabel || ''} onChange={e => updateDraftField('footer', 'footerSocialLabel', e.target.value)} /></div>
               <div className="admin-field">
                 <label>Navigate Links (one per line)</label>
                 <textarea disabled={!isEditing} rows="4" value={arrayToLines(currentData.footer?.links?.navigate)} onChange={e => updateDraftField('footer', 'links', { ...currentData.footer?.links, navigate: linesToArray(e.target.value) })} />

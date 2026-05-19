@@ -43,13 +43,50 @@ const parseStatValue = (value) => {
 
 const formatStatValue = (parts, count) => `${parts.prefix}${count}${parts.suffix}`;
 
+const splitTitleIntoLines = (title) => {
+  const value = String(title || '').trim();
+
+  if (!value) {
+    return ['We turn', 'your ideas', 'into a dazzling digital reality.'];
+  }
+
+  const explicitLines = value
+    .split(/\r?\n+/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+
+  if (explicitLines.length > 1) {
+    return explicitLines;
+  }
+
+  const words = value.split(/\s+/).filter(Boolean);
+  if (words.length <= 3) {
+    return [value];
+  }
+
+  const lineCount = Math.min(3, words.length);
+  const baseSize = Math.floor(words.length / lineCount);
+  const remainder = words.length % lineCount;
+  const lines = [];
+  let cursor = 0;
+
+  for (let index = 0; index < lineCount; index += 1) {
+    const length = baseSize + (index < remainder ? 1 : 0);
+    lines.push(words.slice(cursor, cursor + length).join(' '));
+    cursor += length;
+  }
+
+  return lines.filter(Boolean);
+};
+
 const HeroSection = ({ copy }) => {
+  const heroStats = Array.isArray(copy.stats) && copy.stats.length ? copy.stats : stats;
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(
     window.matchMedia('(prefers-reduced-motion: reduce)').matches
   );
   const [animatedStats, setAnimatedStats] = useState(() =>
-    stats.map((stat) => {
+    heroStats.map((stat) => {
       const parsed = parseStatValue(stat.value);
       return parsed ? formatStatValue(parsed, 0) : stat.value;
     })
@@ -70,11 +107,11 @@ const HeroSection = ({ copy }) => {
 
   useEffect(() => {
     if (prefersReducedMotion) {
-      setAnimatedStats(stats.map((stat) => stat.value));
+      setAnimatedStats(heroStats.map((stat) => stat.value));
       return;
     }
 
-    const parsedStats = stats.map((stat) => parseStatValue(stat.value));
+    const parsedStats = heroStats.map((stat) => parseStatValue(stat.value));
     const animationDuration = 5000;
     const startTime = performance.now();
     let frameId;
@@ -84,7 +121,7 @@ const HeroSection = ({ copy }) => {
       const easedProgress = 1 - Math.pow(1 - progress, 3);
 
       setAnimatedStats(
-        stats.map((stat, index) => {
+        heroStats.map((stat, index) => {
           const parsed = parsedStats[index];
 
           if (!parsed) {
@@ -106,7 +143,7 @@ const HeroSection = ({ copy }) => {
     return () => {
       window.cancelAnimationFrame(frameId);
     };
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, heroStats]);
 
   const scrollToContact = () => {
     const ctaSection = document.getElementById('contact');
@@ -114,6 +151,7 @@ const HeroSection = ({ copy }) => {
   };
 
   const orbAnimationDuration = isMobile || prefersReducedMotion ? 10 : 5;
+  const titleLines = splitTitleIntoLines(copy.title);
 
   return (
     <section id="home" className="hero-shell">
@@ -157,13 +195,18 @@ const HeroSection = ({ copy }) => {
         >
           <motion.div className="hero-badge" variants={prefersReducedMotion ? {} : pillVariants} custom={0}>
             <span className="hero-badge__dot" />
-            Premium Software & AI Studio
+            {copy.badge || 'Premium Software & AI Studio'}
           </motion.div>
 
           <motion.h1 className="hero-title" variants={prefersReducedMotion ? {} : pillVariants} custom={0.08}>
-            <span className="hero-title__line">We turn</span>
-            <span className="hero-title__line hero-title__line--accent">your ideas</span>
-            <span className="hero-title__line">into a dazzling digital reality.</span>
+            {titleLines.map((line, index) => (
+              <span
+                key={`${line}-${index}`}
+                className={`hero-title__line ${index === 1 ? 'hero-title__line--accent' : ''}`.trim()}
+              >
+                {line}
+              </span>
+            ))}
           </motion.h1>
 
           <motion.p className="hero-subtitle" variants={prefersReducedMotion ? {} : pillVariants} custom={0.16}>
@@ -177,12 +220,12 @@ const HeroSection = ({ copy }) => {
             </button>
             <a href="#portfolio" className="hero-button hero-button--secondary">
               <span className="hero-button__play">▶</span>
-              <span>Explore work</span>
+              <span>{copy.secondaryButton || 'Explore work'}</span>
             </a>
           </motion.div>
 
           <motion.div className="hero-stats" variants={prefersReducedMotion ? {} : pillVariants} custom={0.32}>
-            {stats.map((stat, idx) => (
+            {heroStats.map((stat, idx) => (
               <div key={stat.label} className="hero-stat-card">
                 <strong>{animatedStats[idx]}</strong>
                 <span>{stat.label}</span>

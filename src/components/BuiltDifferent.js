@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const BuiltDifferent = ({ copy }) => (
   <section id="why-us" className="section built-different-section">
     <div className="section__header">
-      <span className="section__label">Why Creative Imprints</span>
+      <span className="section__label">{copy.label || 'Why Creative Imprints'}</span>
       <h2>{copy.title}</h2>
     </div>
     <div className="features-grid">

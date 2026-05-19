@@ -13,6 +13,26 @@ const Portfolio = ({ copy }) => {
     setLoadedImages(prev => ({ ...prev, [index]: true }));
   };
 
+  const resolveImageSrc = (item) => {
+    if (item.imageData) {
+      return item.imageData;
+    }
+
+    if (item.image && /^(data:|https?:\/\/|\/)/.test(item.image)) {
+      return item.image;
+    }
+
+    if (!item.image) {
+      return null;
+    }
+
+    try {
+      return require(`../assets/pictures/${item.image}`);
+    } catch (error) {
+      return null;
+    }
+  };
+
   return (
     <section id="portfolio" className="section portfolio-section">
       <div className="section__header">
@@ -49,10 +69,10 @@ const Portfolio = ({ copy }) => {
             exit={{ opacity: 0, scale: 0.9 }}
             transition={{ duration: 0.3 }}
           >
-            {item.image && (
+            {resolveImageSrc(item) && (
               <div className="portfolio-image">
                 <img
-                  src={require(`../assets/pictures/${item.image}`)}
+                  src={resolveImageSrc(item)}
                   alt={item.title}
                   loading="lazy"
                   onLoad={() => handleImageLoad(idx)}

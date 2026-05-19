@@ -18,6 +18,63 @@ const LazyFinalCta = lazy(() => import('./components/FinalCTA'));
 // Loading fallback component
 const SectionFallback = () => <div style={{ height: '100vh', background: 'var(--bg-dark)' }} />;
 
+const STORAGE_KEY = 'cimprints_admin';
+const API_URL = process.env.REACT_APP_API_URL || '/api/content';
+
+function deepClone(value) {
+  return JSON.parse(JSON.stringify(value));
+}
+
+function mergeDeep(base, override) {
+  if (Array.isArray(base)) {
+    return Array.isArray(override) ? deepClone(override) : deepClone(base);
+  }
+
+  if (base && typeof base === 'object') {
+    const result = deepClone(base);
+    if (override && typeof override === 'object') {
+      Object.keys(override).forEach((key) => {
+        if (base[key] && typeof base[key] === 'object' && !Array.isArray(base[key]) && override[key] && typeof override[key] === 'object' && !Array.isArray(override[key])) {
+          result[key] = mergeDeep(base[key], override[key]);
+        } else {
+          result[key] = deepClone(override[key]);
+        }
+      });
+    }
+
+    return result;
+  }
+
+  return override !== undefined ? deepClone(override) : deepClone(base);
+}
+
+function buildContentStore(rawContent) {
+  const content = rawContent && typeof rawContent === 'object' ? rawContent : {};
+
+  if (content.en || content.ar) {
+    return {
+      en: mergeDeep(deepClone(defaultContent.en), content.en || {}),
+      ar: mergeDeep(deepClone(defaultContent.ar), content.ar || {})
+    };
+  }
+
+  return deepClone(defaultContent);
+}
+
+function loadInitialContentStore() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (!saved) {
+    return deepClone(defaultContent);
+  }
+
+  try {
+    return buildContentStore(JSON.parse(saved));
+  } catch (error) {
+    console.error('Failed to parse saved content:', error);
+    return deepClone(defaultContent);
+  }
+}
+
 function AppContent({ lang, setLang, content, setContent }) {
   const location = useLocation();
   const isAdminRoute = location.pathname === '/admin';
@@ -64,29 +121,62 @@ function App() {
   const [lang, setLang] = useState('en');
 
   // contentStore holds per-language copies, e.g. { en: {...}, ar: {...} }
-  const [contentStore, setContentStore] = useState(() => {
-    const saved = localStorage.getItem('cimprints_admin');
-    if (saved) {
+  const [contentStore, setContentStore] = useState(() => loadInitialContentStore());
+
+  useEffect(() => {
+    let active = true;
+
+    const syncRemoteContent = async () => {
       try {
-        return JSON.parse(saved);
-      } catch (e) {
-        console.error('Failed to parse saved content:', e);
+        const response = await fetch(API_URL, { headers: { Accept: 'application/json' } });
+        if (!response.ok) {
+          return;
+        }
+
+        const snapshot = await response.json();
+        if (!snapshot || !snapshot.content) {
+          return;
+        }
+
+        const merged = buildContentStore(snapshot.content);
+        if (!active) {
+          return;
+        }
+
+        setContentStore(merged);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(merged));
+      } catch (error) {
+        // Keep local state if the API is unavailable.
       }
-    }
-    return defaultContent;
-  });
+    };
+
+    void syncRemoteContent();
+
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const content = contentStore[lang] || defaultContent[lang];
 
   // Update current language content and persist to localStorage
   const setContent = (nextContent) => {
     setContentStore((prev) => {
-      const updated = { ...(prev || {}), [lang]: nextContent };
+      const updated = buildContentStore({ ...(prev || defaultContent), [lang]: nextContent });
       try {
-        localStorage.setItem('cimprints_admin', JSON.stringify(updated));
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
       } catch (e) {
         // ignore storage errors
       }
+
+      void fetch(API_URL, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ content: updated })
+      }).catch(() => {
+        // Keep the local save even if the backend is temporarily offline.
+      });
+
       return updated;
     });
   };
